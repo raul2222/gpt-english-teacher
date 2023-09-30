@@ -32,7 +32,7 @@ if model_number in my_list:
 tts = TTS(model_name).to(device)
 
 
-model_size = "medium.en"
+model_size = "small.en"
 model = whisper.load_model(model_size)
 
 # OpenAI
@@ -42,6 +42,7 @@ initial_prompt = """you name is Eva and you are an AI of English learning.
 use beginner-level vocabulary.
 you make only one question and wait for my answer. 
 We have 5 years old.
+Teach me english learning new words and sentences.
 No enumerate the questions."""
 STATE = "AI"
 PROMPT = ""
@@ -59,7 +60,7 @@ recording = False
 audio_data = []
 AUDIO_RECORDED=False
 stream = ""
-p = pyaudio.PyAudio()
+#p = pyaudio.PyAudio()
 
 # Callback function to record audio
 
@@ -75,7 +76,7 @@ def audio_callback(in_data, frame_count, time_info, status):
 def toggle_recording(self):
     global recording
     global stream
-    global p
+    p = pyaudio.PyAudio()
     global audio_data
     if not recording:
         print("Recording started...")
@@ -148,9 +149,9 @@ def textoSpeach(text_to):
     wave_obj = sa.WaveObject.from_wave_file("output.wav")
     play_obj = wave_obj.play()
     play_obj.wait_done()
-    print("\033[H\033[J", end="")
-    print("Listen to me")
-    time.sleep(2)
+    #print("\033[H\033[J", end="")
+    #print("Listen to me")
+    time.sleep(2.2)
     play_obj = wave_obj.play()
     play_obj.wait_done()
     STATE="USER"
@@ -201,7 +202,6 @@ while True:
         textoSpeach(full_reply_content_last)
 
     if STATE == "WHISPER":
-
         Whisper()
         STATE="AI"
 
