@@ -46,7 +46,7 @@ No enumerate the questions."""
 STATE = "AI"
 PROMPT = ""
 collected_messages = []
-full_reply_content = ""
+full_reply_content_last = ""
 
 # Constants
 output_filename = "captured_audio.wav"
@@ -62,7 +62,9 @@ stream = ""
 p = pyaudio.PyAudio()
 
 # Callback function to record audio
+
 def audio_callback(in_data, frame_count, time_info, status):
+    global audio_data
     if status:
         print(status)
     if recording:
@@ -74,9 +76,10 @@ def toggle_recording(self):
     global recording
     global stream
     global p
+    global audio_data
     if not recording:
         print("Recording started...")
-        audio_data.clear()
+        audio_data=[]
         recording = True
         stream = p.open(format=pyaudio.paInt16,
                         channels=1,
@@ -111,8 +114,8 @@ def save_audio_to_wav():
 
 def chatGPT(prompt):
     global STATE
-    global full_reply_content
-    global collected_messages
+    global full_reply_content_last
+    collected_messages =[]
     chat_history.append({"role": "user", "content": prompt})
     response_iterator = openai.ChatCompletion.create(
         model="gpt-4",
@@ -129,14 +132,17 @@ def chatGPT(prompt):
         print("\033[H\033[J", end="")
     chat_history.append({"role": "assistant", "content": full_reply_content})
     # print the time delay and text received
+    full_reply_content_last = full_reply_content
     full_reply_content = ''.join([m.get('content', '') for m in collected_messages])
     print(f"GPT: {full_reply_content}")
+    full_reply_content = ''
+   
     STATE="TTS"
 
 
 def textoSpeach(text_to):
     global STATE 
-    global full_reply_content
+    
     #tts.tts_to_file(text=text_to,  speaker=tts.speakers[0], language=tts.languages[0], file_path="output.wav")
     tts.tts_to_file(text=text_to,   file_path="output.wav")
     wave_obj = sa.WaveObject.from_wave_file("output.wav")
@@ -192,7 +198,7 @@ while True:
         STATE="WHISPER"
 
     if STATE == "TTS":
-        textoSpeach(full_reply_content)
+        textoSpeach(full_reply_content_last)
 
     if STATE == "WHISPER":
 
