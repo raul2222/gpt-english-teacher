@@ -3,10 +3,17 @@ import wave
 import os
 import torch
 from TTS.api import TTS
-import simpleaudio as sa
+import sounddevice as sd
+import numpy as np
 import time
 import keyboard
+import simpleaudio as sa
+import whisper
+import pygame
+import pyaudio
 
+
+pygame.init()
 
 # Get device
 device = 'cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu'
@@ -25,10 +32,12 @@ if model_number in my_list:
 tts = TTS(model_name).to(device)
 
 
+model_size = "medium.en"
+model = whisper.load_model(model_size)
+
 # OpenAI
 openai.api_key = os.environ["OPENAI_API_KEY"]
 chat_history = []
-# you'll use medium-level vocabulary. In this role,
 initial_prompt = """you name is Eva and you are an AI of English learning. 
 use beginner-level vocabulary.
 you make only one question and wait for my answer. 
@@ -41,68 +50,64 @@ full_reply_content = ""
 
 # Constants
 output_filename = "captured_audio.wav"
-trigger_key = "p"  # Change this to the key you want to use as a trigger
 
 # Constants for audio recording
-fs = 44100  # Sample rate (samples per second)
+fs = 22050  # Sample rate (samples per second)
 duration = 60  # Maximum recording duration in seconds
 output_filename = "recorded_audio.wav"
 recording = False
 audio_data = []
+AUDIO_RECORDED=False
+stream = ""
+p = pyaudio.PyAudio()
 
+# Callback function to record audio
+def audio_callback(in_data, frame_count, time_info, status):
+    if status:
+        print(status)
+    if recording:
+        audio_data.append(in_data)
+    return in_data, pyaudio.paContinue
 
 # Function to start or stop recording
 def toggle_recording(self):
     global recording
-    global audio_data
-
+    global stream
+    global p
     if not recording:
         print("Recording started...")
-        audio_data = []
+        audio_data.clear()
         recording = True
+        stream = p.open(format=pyaudio.paInt16,
+                        channels=1,
+                        rate=fs,
+                        input=True,
+                        frames_per_buffer=1024,
+                        stream_callback=audio_callback)
+        stream.start_stream()
     else:
-        recording = False
-        save_audio_to_wav()
         print("Recording stopped.")
-        keyboard.unhook_all()
+        recording = False
+        stream.stop_stream()
+        stream.close()
+        p.terminate()
+        save_audio_to_wav()
 
 # Function to save recorded audio to a WAV file
 def save_audio_to_wav():
+    global audio_data
+    global AUDIO_RECORDED
     if audio_data:
         print(f"Saving recorded audio to '{output_filename}'...")
+        audio_data = b''.join(audio_data)
         with wave.open(output_filename, 'wb') as wf:
             wf.setnchannels(1)
             wf.setsampwidth(2)
             wf.setframerate(fs)
-            wf.writeframes(b''.join(audio_data))
+            wf.writeframes(audio_data)
         print(f"Recording saved as '{output_filename}'.")
+        AUDIO_RECORDED = True
 
-'''
-def captureAudio():
-    stream = audio.open(format=audio_format,
-                        channels=1,
-                        rate=sample_rate,
-                        input=True,
-                        frames_per_buffer=chunk_size)
-    # Wait for the trigger key press
-    keyboard.wait(trigger_key)
-    frames = []
-    while True:
-        try:
-            data = stream.read(chunk_size, exception_on_overflow=False)
-            frames.append(data)
-        except KeyboardInterrupt:
-            break
-    with wave.open(output_filename, 'wb') as wf:
-        wf.setnchannels(1)
-        wf.setsampwidth(audio.get_sample_size(audio_format))
-        wf.setframerate(sample_rate)
-        wf.writeframes(b''.join(frames))
-    stream.stop_stream()
-    stream.close()
-    audio.terminate()
-    STATE="WHISPER"
-'''
 
 def chatGPT(prompt):
     global STATE
@@ -137,12 +142,23 @@ def textoSpeach(text_to):
     wave_obj = sa.WaveObject.from_wave_file("output.wav")
     play_obj = wave_obj.play()
     play_obj.wait_done()
+    print("\033[H\033[J", end="")
+    print("Listen to me")
+    time.sleep(2)
+    play_obj = wave_obj.play()
+    play_obj.wait_done()
     STATE="USER"
 
-'''
+
 def Whisper():
-    STATE="AI"
-'''
+    global PROMPT
+    print("enter whisper")
+    result = model.transcribe(output_filename, fp16=False)
+    print(result["text"])
+    PROMPT = result["text"]
+    time.sleep(1.05)
+    
+
 
 
 
@@ -152,15 +168,35 @@ def Whisper():
 chatGPT(initial_prompt)
 
 while True:
+
     if STATE == "AI":
         chatGPT(PROMPT)
+
     if STATE == "USER":
-        keyboard.on_press_key('r', toggle_recording)
-        keyboard.wait('q')
+        AUDIO_RECORDED = False
+        keyboard.on_press_key('space', toggle_recording)
+        while AUDIO_RECORDED==False:
+            time.sleep(0.05)
+        keyboard.unhook_all()
+        '''
+        # Load the WAV file
+        pygame.mixer.music.load(output_filename)
+
+        # Play the audio
+        pygame.mixer.music.play()
+
+        # Wait for the audio to finish playing
+        while pygame.mixer.music.get_busy():
+            pygame.time.Clock().tick(10)
+        '''
         STATE="WHISPER"
+
     if STATE == "TTS":
         textoSpeach(full_reply_content)
+
     if STATE == "WHISPER":
-        #Whisper()
-        print("wisperq")
+
+        Whisper()
+        STATE="AI"
+
     time.sleep(0.05)
