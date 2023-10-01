@@ -1,22 +1,20 @@
-import openai
-import wave
-import os
-import torch
+from faster_whisper import WhisperModel
+import openai, wave, os, torch
 from TTS.api import TTS
 import sounddevice as sd
-import numpy as np
-import time
-import keyboard
 import simpleaudio as sa
-import whisper
-import pygame
-import pyaudio
+import numpy as np
+import time, keyboard, pyaudio
 
 
-pygame.init()
-
+# Constants
+output_filename = "recorded_audio.wav"
 # Get device
 device = 'cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu'
+
+model_size = "medium.en"
+model = WhisperModel(model_size, device="cpu", compute_type="int8")
+
 
 
 # Init TTS
@@ -24,7 +22,7 @@ print("start")
 model_name = TTS().list_models()
 for index, item in enumerate(model_name, 0):
     print(f"{index}. {item}")
-model_number = 13
+model_number = 10
 model_name = TTS().list_models()[model_number]
 my_list = [17, 11, 10, 14, 15]
 if model_number in my_list:
@@ -32,38 +30,37 @@ if model_number in my_list:
 tts = TTS(model_name).to(device)
 
 
-model_size = "small.en"
-model = whisper.load_model(model_size)
+
 
 # OpenAI
 openai.api_key = os.environ["OPENAI_API_KEY"]
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 chat_history = []
-initial_prompt = """you name is Eva and you are an AI of English learning. 
-use beginner-level vocabulary.
+initial_prompt = """you are an AI assistant of English learning.  
+use beginner-level vocabulary. 
 you make only one question and wait for my answer. 
-We have 5 years old.
-Teach me english learning new words and sentences.
-No enumerate the questions."""
+We have 5 years old. 
+Teach me english learning new words and sentences. 
+No enumerate the questions. 
+You have the power of your creativity for new kinds of teaching english. 
+Remember that I have 5 years old. """
+initial_prompt = initial_prompt.replace("\n", "")
 STATE = "AI"
 PROMPT = ""
 collected_messages = []
 full_reply_content_last = ""
 
-# Constants
-output_filename = "captured_audio.wav"
+
 
 # Constants for audio recording
 fs = 22050  # Sample rate (samples per second)
 duration = 60  # Maximum recording duration in seconds
-output_filename = "recorded_audio.wav"
 recording = False
 audio_data = []
 AUDIO_RECORDED=False
 stream = ""
-#p = pyaudio.PyAudio()
 
 # Callback function to record audio
-
 def audio_callback(in_data, frame_count, time_info, status):
     global audio_data
     if status:
@@ -137,13 +134,20 @@ def chatGPT(prompt):
     full_reply_content = ''.join([m.get('content', '') for m in collected_messages])
     print(f"GPT: {full_reply_content}")
     full_reply_content = ''
-   
+    saveChatHistory()
     STATE="TTS"
 
+def saveChatHistory():
+    global chat_history
+    # Specify the file path
+    file_path = "output.txt"
+    # Open the file in write mode
+    with open(file_path, "w") as file:
+    # Use a loop to write each element to the file
+        file.write(str(chat_history))  # Add a newline after each element
 
 def textoSpeach(text_to):
     global STATE 
-    
     #tts.tts_to_file(text=text_to,  speaker=tts.speakers[0], language=tts.languages[0], file_path="output.wav")
     tts.tts_to_file(text=text_to,   file_path="output.wav")
     wave_obj = sa.WaveObject.from_wave_file("output.wav")
@@ -151,7 +155,7 @@ def textoSpeach(text_to):
     play_obj.wait_done()
     #print("\033[H\033[J", end="")
     #print("Listen to me")
-    time.sleep(2.2)
+    time.sleep(0.2)
     play_obj = wave_obj.play()
     play_obj.wait_done()
     STATE="USER"
@@ -160,17 +164,47 @@ def textoSpeach(text_to):
 def Whisper():
     global PROMPT
     print("enter whisper")
-    result = model.transcribe(output_filename, fp16=False)
-    print(result["text"])
-    PROMPT = result["text"]
+    segments, info = model.transcribe("recorded_audio.wav", beam_size=5)
+    result = ""
+    for segment in segments:
+        print("[%.2fs -> %.2fs] %s" % (segment.start, segment.end, segment.text))
+        result = result + segment.text
+    print(result)
+    PROMPT = result
     time.sleep(1.05)
     
+def Sumarize():
+    file_path = "output.txt"
+    if os.path.exists(file_path):
+        with open(file_path, "r") as file:
+            file_contents = file.read() # Add a newline after each element
+            file_path = "chat_history.txt"
+            # Open the file in write mode
+            with open(file_path, "a") as file:
+                # Use a loop to write each element to the file
+                file.write(file_contents)  # Add a newline after each element
+            
+            prompt = "sumarize this text without number:" + file_contents
+            chat_history.append({"role": "user", "content": prompt})
+            response_iterator = openai.ChatCompletion.create(
+                model="gpt-4",
+                messages = chat_history,
+                stream=True,
+                max_tokens=300)
+            for chunk in response_iterator:
+                chunk_message = chunk['choices'][0]['delta']  # extract the message
+                collected_messages.append(chunk_message)  # save the message
+                full_reply_content = ''.join([m.get('content', '') for m in collected_messages])
+            print("This is a sumarize of last classrom: " + full_reply_content + " and this is your task: " + initial_prompt)
+            time.sleep(0.1)
+            chatGPT("This is a sumarize of last classroom: " + full_reply_content + ". And this is your task: " + initial_prompt)
+            chat_history.pop(0)
+    else:
+        chatGPT(initial_prompt)
 
 
 
-
-
-
+#Sumarize()
 
 chatGPT(initial_prompt)
 
@@ -186,13 +220,8 @@ while True:
             time.sleep(0.05)
         keyboard.unhook_all()
         '''
-        # Load the WAV file
         pygame.mixer.music.load(output_filename)
-
-        # Play the audio
         pygame.mixer.music.play()
-
-        # Wait for the audio to finish playing
         while pygame.mixer.music.get_busy():
             pygame.time.Clock().tick(10)
         '''
