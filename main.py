@@ -9,13 +9,14 @@ import time, keyboard, pyaudio
 
 # Constants
 output_filename = "recorded_audio.wav"
+DEBUG = False
+
 # Get device
 device = 'cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu'
 
+# Faster-Whisper
 model_size = "medium.en"
 model = WhisperModel(model_size, device="cpu", compute_type="int8")
-
-
 
 # Init TTS
 print("start")
@@ -29,27 +30,22 @@ if model_number in my_list:
     device='cpu'
 tts = TTS(model_name).to(device)
 
-
-
-
 # OpenAI
 openai.api_key = os.environ["OPENAI_API_KEY"]
 os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 chat_history = []
-initial_prompt = """you are an AI assistant of English learning.  
-use beginner-level vocabulary. 
-you make only one question and wait for my answer. 
-We have 5 years old. 
+initial_prompt = """You are an AI assistant of English learning.  
+Use beginner-level vocabulary. 
+You make only one question and wait for my answer. 
 Teach me english learning new words and sentences. 
 No enumerate the questions. 
-You have the power of your creativity for new kinds of teaching english. 
+You have the power of your creativity for new kinds for learn English. 
 Remember that I have 5 years old. """
 initial_prompt = initial_prompt.replace("\n", "")
 STATE = "AI"
 PROMPT = ""
 collected_messages = []
 full_reply_content_last = ""
-
 
 
 # Constants for audio recording
@@ -125,14 +121,16 @@ def chatGPT(prompt):
         chunk_message = chunk['choices'][0]['delta']  # extract the message
         collected_messages.append(chunk_message)  # save the message
         full_reply_content = ''.join([m.get('content', '') for m in collected_messages])
-        print(full_reply_content)
+        if DEBUG:
+            print(full_reply_content)
         # clear the terminal
         print("\033[H\033[J", end="")
     chat_history.append({"role": "assistant", "content": full_reply_content})
     # print the time delay and text received
     full_reply_content_last = full_reply_content
     full_reply_content = ''.join([m.get('content', '') for m in collected_messages])
-    print(f"GPT: {full_reply_content}")
+    if DEBUG:
+        print(f"GPT: {full_reply_content}")
     full_reply_content = ''
     saveChatHistory()
     STATE="TTS"
@@ -155,7 +153,7 @@ def textoSpeach(text_to):
     play_obj.wait_done()
     #print("\033[H\033[J", end="")
     #print("Listen to me")
-    time.sleep(0.2)
+    time.sleep(2.2)
     play_obj = wave_obj.play()
     play_obj.wait_done()
     STATE="USER"
@@ -219,12 +217,6 @@ while True:
         while AUDIO_RECORDED==False:
             time.sleep(0.05)
         keyboard.unhook_all()
-        '''
-        pygame.mixer.music.load(output_filename)
-        pygame.mixer.music.play()
-        while pygame.mixer.music.get_busy():
-            pygame.time.Clock().tick(10)
-        '''
         STATE="WHISPER"
 
     if STATE == "TTS":
