@@ -37,7 +37,7 @@ chat_history = []
 initial_prompt = """You are an AI assistant of English learning.  
 Use beginner-level vocabulary. 
 You make only one question and wait for my answer. 
-Teach me english learning new words and sentences. 
+Teach me english using new words and sentences. 
 No enumerate the questions. 
 You have the power of your creativity for new kinds for learn English. 
 Remember that I have 5 years old. """
@@ -111,6 +111,7 @@ def chatGPT(prompt):
     global full_reply_content_last
     collected_messages =[]
     chat_history.append({"role": "user", "content": prompt})
+    saveChatHistory("user",prompt)
     response_iterator = openai.ChatCompletion.create(
         model="gpt-4",
         messages = chat_history,
@@ -126,37 +127,49 @@ def chatGPT(prompt):
         # clear the terminal
         print("\033[H\033[J", end="")
     chat_history.append({"role": "assistant", "content": full_reply_content})
+    saveChatHistory("assistant",full_reply_content)
     # print the time delay and text received
     full_reply_content_last = full_reply_content
     full_reply_content = ''.join([m.get('content', '') for m in collected_messages])
     if DEBUG:
         print(f"GPT: {full_reply_content}")
     full_reply_content = ''
-    saveChatHistory()
     STATE="TTS"
 
-def saveChatHistory():
+def saveChatHistory(rol,prompt):
     global chat_history
     # Specify the file path
-    file_path = "output.txt"
-    # Open the file in write mode
-    with open(file_path, "w") as file:
-    # Use a loop to write each element to the file
-        file.write(str(chat_history))  # Add a newline after each element
+    file_path = "chat_history.txt"
+    if prompt != initial_prompt:
+        # Open the file in write mode
+        with open(file_path, "a") as file:
+        # Use a loop to write each element to the file
+            file.write(rol+": "+prompt+"\n")  # Add a newline after each element
 
 def textoSpeach(text_to):
     global STATE 
     #tts.tts_to_file(text=text_to,  speaker=tts.speakers[0], language=tts.languages[0], file_path="output.wav")
+    print("\033[H\033[J", end="")
+    print("Listen to me")
     tts.tts_to_file(text=text_to,   file_path="output.wav")
+
     wave_obj = sa.WaveObject.from_wave_file("output.wav")
     play_obj = wave_obj.play()
     play_obj.wait_done()
-    #print("\033[H\033[J", end="")
-    #print("Listen to me")
-    time.sleep(2.2)
-    play_obj = wave_obj.play()
-    play_obj.wait_done()
+
     STATE="USER"
+
+def speed_change(sound, speed=1.0):
+    # Manually override the frame_rate. This tells the computer how many
+    # samples to play per second
+    sound_with_altered_frame_rate = sound._spawn(sound.raw_data, overrides={
+        "frame_rate": int(sound.frame_rate * speed)
+    })
+
+    # convert the sound with altered frame rate to a standard frame rate
+    # so that regular playback programs will work right. They often only
+    # know how to play audio at standard frame rate (like 44.1k)
+    return sound_with_altered_frame_rate.set_frame_rate(sound.frame_rate)
 
 
 def Whisper():
@@ -169,8 +182,8 @@ def Whisper():
         result = result + segment.text
     print(result)
     PROMPT = result
-    time.sleep(1.05)
-    
+
+'''    
 def Sumarize():
     file_path = "output.txt"
     if os.path.exists(file_path):
@@ -199,7 +212,7 @@ def Sumarize():
             chat_history.pop(0)
     else:
         chatGPT(initial_prompt)
-
+'''
 
 
 #Sumarize()
