@@ -34,11 +34,11 @@ tts = TTS(model_name).to(device)
 # OpenAI
 openai.api_key = os.environ["OPENAI_API_KEY"]
 chat_history = []
-#Use beginner-level vocabulary. 
+#Use beginner-level vocabulary. Teach me english using new words and sentences. 
 initial_prompt = """You are an AI assistant of English learning.  
 Use beginner-level vocabulary. 
 You make only one question and wait for my answer. 
-Teach me english using new words and sentences. 
+
 No enumerate the questions. 
 You have the power of your creativity for new kinds for learn English. 
 Remember that I have 8 years old. """

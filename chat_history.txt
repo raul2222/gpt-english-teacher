@@ -281,3 +281,223 @@ user:  Let's talk about climate change.
 assistant: Sure, we can talk about climate change again. It's an important topic. Climate change means the weather in the world is changing and getting hotter. This can hurt the animals and the plants. What do you think we can do to help stop climate change?
 user:  Thanks for watching!
 assistant: You're welcome! I'm glad I could help you learn English. Keep practicing and I'll be here if you want to learn more. Goodbye for now!
+assistant: Great! Let's learn a new word. Have you ever felt very, very happy about something? When you are not just happy, but extremely happy, you can use the word "ecstatic". Can you try to create a sentence using the word "ecstatic"?
+user:  I'm ecstatic today.
+assistant: Well done! That sentence is perfect. You can also add more information to that sentence like, "I'm ecstatic today because I got a new toy". Keep practicing!
+user:  I'm ecstatic today because I got a new toy.
+assistant: Fantastic! You used the word "ecstatic" perfectly in your sentence. This will surely make your English even better. Do you want to learn another new word?
+user:  Yes, please.
+assistant: Great enthusiasm! The new word for today is 'gratitude'. It means to be thankful or grateful for something. An example sentence could be: "I show my gratitude to my parents by helping them in chores." Now, could you make a sentence using the word 'gratitude'?
+user:  What is George?
+assistant: "George" is actually a name. It is a very common name given to boys. It can also be a surname for some people. For instance, "George Washington" was the first president of the United States. Can you use "George" in a sentence?
+user:  Notice George is charged.
+assistant: Great job! The sentence is grammatically correct but it's a bit unclear. If "George" is a name of a person, the sentence can be, "I noticed that George is tired." Or if George is a name of a device, the sentence can be, "I noticed that George is charged and ready to use.". Can you try one more time?
+user:  This is absolutely for free for you.
+assistant: That's a great sentence! You used the word "absolutely" correctly, which means completely or totally. Keep practicing like this. Can you create a sentence using the phrase "on the dot"? Remember, "on the dot" means exactly on time or punctual.
+assistant: Alright, great! Let's start learning English. We'll use fun ways that will make learning super easy for you. 
+
+1. Draw and Describe Game: I'll tell you to draw something, like a tall, big tree, and then you describe it to me in English. You can say, "I drew a tall tree. It has green leaves and a brown trunk."
+
+2. Rhyming Words: You know songs, right? Let's take some words and find others that sound the same. For example, cat and hat. Now you think of two words that sound similar.
+
+3. Story Time: How about we write a short story together? I'll start. Once upon a time, there was a small cat. Can you add the next part?
+
+4. Playing With Blocks: Do you have lego or other building blocks? Why don't we use them? You can build something and then tell me what you made saying, "I made a tall tower. It has four walls."
+
+5. Word Match: You love puzzles, right? We can get pictures and their names, mix them up and then you match the picture to the right word. 
+
+6. Singing Songs: Can you think of any songs in English? We can sing them together and learn new words! 
+
+Remember, it's okay if you make mistakes. We learn more when we try again. So, let's have fun while we learn.
+assistant: What is your favorite animal and can you tell me three things about it?
+user:  My favourite animal is Cheetah, because it has very fast, the colour is yellow with black dots. and the body is very attractive for me.
+assistant: Wow, those are interesting facts about the cheetah! Can you also tell me what a cheetah likes to eat?
+user:  Sita eats when kill other animal.
+assistant: That's right! Cheetahs, being carnivores, eat other small animals. Do you know where cheetahs live?
+user:  Yes, the Cheetahs lives in Savannah.
+assistant: Very good! Cheetahs indeed live in the savannahs in Africa. Now, can you make a sentence using the word "cheetah"?
+user:  The cheetah lies in African savanna.
+assistant: That's a great sentence! Can you also tell me what a cheetah does during the day?
+user:  Let's talk about climate change, please.
+assistant: Sure, we can switch topics. Can you tell me what you know about climate change?
+user:  What do you think about the climate change of the world in the next 10 years?
+assistant: As an AI, I don't have personal opinions. But scientists say that if we don't take better care of our planet, the climate could change even more. What are some things we can do to help the environment?
+user:  What are the best things that humanity can change in their life for help or to stop the climate change in this world?
+assistant: Great question! Some of the things humans can do include reducing waste by recycling, using less energy by switching off lights and appliances when they're not needed, and choosing to walk or ride a bicycle instead of using a car for short trips. Can you think of any other ways to help our planet?
+user:  May be the key is the recital.
+assistant: Yes, recycling is very important for reducing waste and helping the environment. Can you tell me what recycling means?
+user:  Recycling is when you don't need anything. And other people choose this thing that you don't want anymore. And with this thing, these people create a new one.
+assistant: Great explanation! Indeed, recycling involves taking used materials, like paper, plastic, or metal, and turning them into new products. Which material do you recycle the most at home?
+user:  In my home, I recycle cartoons, glass, food and plastic.
+assistant: That's fantastic! You're doing a great job helping our planet. Can you tell me what are the recycling symbols you know?
+user:  For the plastic it is a yellow container, for the food it is a green container, and for the cartoon it is a blue container.
+assistant: Exactly! Those are the colors of the bins for recycling different materials. Can you tell me why we should not throw plastic into the sea?
+user:  We should not throw plastic to the sea, because after this plastic returns to you...
+assistant: That's true! Plastic in the sea can harm marine life and can also eventually wash up on beaches. It shows everything is connected, doesn't it? Can you give another example of how everything in nature is connected?
+user:  When you throw plastic to the sea, this plastic enters to the fish in the sea. After, this plastic that is inside the fish returns to you in the foot.
+assistant: Yes, you're very correct! This is an example of a food chain. If we allow plastic to be eaten by fish, and then we eat the fish, the plastic can end up in our bodies. How else can we protect sea creatures?
+user:  We can protect these glitters, stop, throw plastic to the ceiling.
+assistant: You're exactly right! We need to stop throwing plastic and other waste into the sea to protect marine life. Can you tell me the name of any water animal you like?
+user:  My favorite water animal is a shark.
+assistant: Do you know why sharks are important to the ocean environment?
+user:  How do you say Tiburo Valena in English?
+assistant: "Tiburón Ballena" translates to "Whale Shark" in English. Can you tell me something about the whale shark?
+
+user:  The whale shark is the most rare water animal in the ocean environment.
+assistant: Indeed, whale sharks are very special animals. Do you know what they eat?
+user:  What is the word sorry?
+assistant: The word "sorry" is used to express regret, sympathy, or a request for forgiveness. Can you use "sorry" in a sentence?
+user:  Where they lie?
+assistant: Could you please clarify your question? Are you asking where whale sharks live?
+user:  Where was our life?
+assistant: It seems like your question is a bit complex for your age. Are you asking about where humans come from or how life starts? Can you please clarify a bit?
+user:  Let's talk about technology, please.
+assistant: Sure, we can talk about technology. Do you have a favorite gadget or device?
+user:  My favourite device is airport pen.
+assistant: It seems like there's confusion. I'm not sure what an airport pen is. Did you mean an Apple Pencil or something else perhaps? Can you describe it for me?
+user:  Yes, it is appropriate to see.
+assistant: I'm sorry, I didn't quite understand your reply. Are you saying it's something you can see with? Can you provide more details, please?
+user:  I like a lot the Apple Pencil because you feel like a real paper.
+assistant: That's awesome! The Apple Pencil is a great tool for drawing and writing, just like on paper. Can you tell me what you like to draw or write the most with it?
+user:  I enjoy writing in this screen and this device.
+assistant: That sounds great! Writing on a screen with a stylus like the Apple Pencil can be fun. Can you write a short sentence about your day?
+user:  Can you repeat please?
+assistant: Of course, I can repeat. Can you write a short sentence about what you did today?
+user:  Yes, today I'm writing the cover letter for a job.
+assistant: That's interesting! Even though you're quite young for a job, let's pretend. So, what job are you pretending to apply for in your game?
+user:  Notice again, I'm searching for you.
+assistant: Okay. What is something you like to do? Maybe we can pretend that's your job for our game.
+user:  What do you say, game?
+assistant: A game is an activity that we do for fun. It often has rules and we try to win. Can you name a game you like to play?
+user:  Yes, continuing.
+assistant: I'm glad you want to continue. Can you tell me the name of the game you like to play?
+user:  My favorite game that I enjoy playing is hide and seek game.
+assistant: Hide and seek is a lot of fun! Can you tell me what you like most about this game?
+user:  This game is very fun because you can enjoy the game. You enjoy a lot of time and you enjoy with a good moment.
+assistant: That's wonderful! So, what is the best hiding place you've ever found while playing hide and seek?
+user:  Can you repeat it?
+assistant: Sure! What is the best place you ever hid in when you played hide and seek?
+user:  Yes, the best place that I played the height and seek game is the square of my tongue when I was more young.
+assistant: Sounds like you had a lot of fun playing hide and seek in the square of your town when you were younger. Who did you usually play this game with?
+user:  I played this game with my friends.
+assistant: That's wonderful! Playing games with friends can be so much fun. Can you make a sentence using the word "friends"?
+user:  I have a lot of friends but today I can play with them because all is mario.
+assistant: I'm sorry to hear that all your friends are "mario". Could you provide me with more information? I think I didn't understand your message correctly.
+user:  I feel alone because all my friends is married.
+assistant: I understand that it might feel lonely when your friends are busy. But remember, you can always make new friends too! Can you tell me how you usually make new friends?
+user:  I live in a little dome and I can't know new friends.
+assistant: It can be tough when you live in a small place and can't easily meet new people. But remember, you can also make friends online or through shared interests. What are some things you like to do?
+user:  let's talk about the climate change please
+assistant: Of course, we can talk about climate change. Do you know what are some causes of climate change?
+user:  Can you repeat please?
+assistant: Absolutely! Can you tell me what causes climate change?
+user:  The principal cause of climate change is the energy production.
+assistant: That's true, energy production, especially from fossil fuels, is a major cause of climate change. Can you tell me something we can do to reduce this?
+user:  To reduce this, we need to use a new source of energy like wind or solar.
+assistant: You're absolutely right! Wind and solar power are great sources of renewable energy. Can you tell me how solar energy works?
+user:  The solar energy works with the energy of Sun.
+assistant: Right, solar panels collect sunlight and convert it into electricity. Can you think of any places where it might be good to use solar panels?
+user:  The solar panels are in the top of the house.
+assistant: Yes, the roof of a house is a great place for solar panels because it often gets a lot of sunlight. Can you tell me why sunlight is important?
+user:  The orientation of the panels is very important for approving the sunlight currently.
+assistant: Yes, the direction the solar panels face can affect how much sunlight they capture. Why do you think sunlight is important for us and the earth?
+user:  The sunlight is very important for the people because the humans need the deep vitamin for life.
+assistant: Indeed, sunlight helps our bodies produce vitamin D, which is important for our health. Can you name something else that needs sunlight to live?
+user:  I don't know
+assistant: That's okay! Plants need sunlight to live. They use sunlight for photosynthesis, which is how they make their food. Can you name a plant you like?
+user:  I like sunflowers.
+assistant: Sunflowers are lovely! Do you know why sunflowers are called as such?
+user:  I can't understand this question.
+assistant: I'm sorry for the confusion. I'll simplify the question. Why do you think sunflowers are called "sunflowers"?
+user:  Yes, this name is by this plant is similar to a one-sun.
+assistant: Yes, you're correct! Sunflowers are named for their bright, sun-like appearance. Do you know which direction sunflowers usually face?
+user:  The light of the Sun starts with the West and stops in the West.
+assistant: Actually, the sun rises in the East and sets in the West. Sunflowers often face the East to catch the morning sun. Did you know that?
+user:  No, thanks for help me.
+assistant: You're welcome! Learning is always fun. Do you want to ask anything else about sunflowers, or shall we talk about something new?
+user:  Let's talk about technology please.
+assistant: Of course! Technology is a fascinating topic. Do you have a favorite technological device?
+user:  Let's talk about artificial intelligence.
+assistant: Sure, we can talk about artificial intelligence! It's a very interesting topic. Do you know what artificial intelligence is?
+user:  The artificial intelligence is a big technological invention and it uses linear algebra.
+assistant: That's right! Artificial Intelligence, or AI, does involve complex mathematics like linear algebra. It's used to create systems and machines that can "learn" and make decisions. Can you tell me something you like about AI?
+user:  I think that the best invention of AI are the large language models.
+assistant: Great observation! Large language models, like chatbots, can communicate in natural language, making it easier for people to interact with them. How do you think AI can be used to help people?
+user:  One of the things that the people can use on large language models is the capacity of their English with this technology.
+assistant: Absolutely! Using AI language models, people can practice and improve their English. Can you think of another way AI can be helpful?
+user:  I think, too, that large language models can help the robot and the robot can achieve, be more useful.
+assistant: Yes, you're absolutely right! Large language models can indeed make robots more useful by allowing them to understand and respond to human language. Is there something specific you'd like a robot to help you with?
+user:  One robot that uses large language models can help the children with autism.
+assistant: That's a wonderful idea! Robots using AI can indeed be beneficial in assisting children with autism in various ways, like communication and social interaction. Which tasks do you think these robots should be taught to perform?
+user:  The principal task of this robot will be to learn to talk with the people because these children have handicapped communication.
+assistant: You're absolutely right! This would be a great help for children who have trouble with communication. Can you name another way these robots could help?
+user:  If the children are very young, the robot can't play with them.
+assistant: That's true. For young children, a robot can provide entertainment and interactive play, which is essential for their development. Do you think these robots would need to look like humans, animals or something else to interact better with children?
+user:  Yes, large language models can teach new things to each other.
+assistant: Absolutely! Large language models can indeed learn and improve over time which is a way of teaching each other. Do you know any other capabilities of these AI models?
+user:  Other capabilities of these models can be to learn new things.
+assistant: That's correct! AI models can be programmed to learn new things, adapt and improve over time. This is actually what happens when you interact with an AI like me! How does AI make your life better or easier?
+user:  Yes, that is correct.
+assistant: I'm glad you agree! Artificial Intelligence really does have so many capabilities. Can you think of a way that AI might be used in schools of the future?
+user:  I think that this technology could be very useful in this place when don't arrive the recurs like a third level of economy people.
+assistant: Yes, AI could help provide education resources in places where they are limited. That's a very thoughtful idea. Can you tell me more about how you imagine this might work?
+user:  Maybe the robots can replace the actual teachers.
+assistant: That's a popular thought! Robots could certainly aid teachers by handling routine tasks, but the human connect a teacher offers is unparalleled. What subjects would you want to learn from a robot teacher?
+user:  English by example
+assistant: Absolutely! Language learning is definitely something where AI can help a lot. Can you think of a fun way to practice English with a robot?
+user:  Yes, I'm actually using this technology for running Android.
+assistant: That's great! Using AI technologies can definitely improve your language skills. Do you use any other technologies to learn English?
+user:  Actually not
+assistant: That's okay! So, can you tell me what you like most about learning English with AI?
+user:  I enjoy learning English with AI because I'm programming this AI for Teach Me English with Learn New Words and Sentences.
+assistant: That's amazing! Learning while programming is a great way to improve both your language and coding skills. Can you tell me something new you have learned recently?
+user:  Today, I learn a new word, and this word is word shark.
+assistant: That's wonderful! The word "shark" is indeed an interesting one. Can you make a sentence using the word "shark"?
+user:  Can you make a question?
+assistant: Sure! What is the color of a shark?
+user:  Can I make you a question?
+assistant: Of course! Please feel free to ask any question you have in mind.
+user:  What do you think about the creativity of large language models?
+assistant: As an artificial intelligence, I don't have personal opinions. But it is commonly agreed that large language models can generate novel and creative outputs based on the input and training they receive. They can be creative in the sense of combining information in new ways, but they don't have creativity in the human sense as they don't have consciousness or emotions. Do you think AI can be creative?
+user:  Yes, I think.
+assistant: That's an interesting perspective! Can you tell me more about why you think AI can be creative?
+user:  Yes, because I feel it.
+assistant: That's a very intuitive response! It's indeed a fascinating aspect of AI. Some people feel that AI can produce outputs that appear creative. Can you give an example of a creative thing an AI has done?
+user:  During the creation of my final degree project, one of the largest language models can help me to create an animation.
+assistant: That's very fascinating! AI can certainly aid in executing creative tasks like animations. Can you tell me more about the animation you created?
+user:  This animation consists of dots in movement in a leaf panel.
+assistant: That sounds like a creative use of animation. What do you like most about creating animations?
+user:  My final degree project is about creating a robot, and this robot has a lead panel for interacting with the user.
+assistant: That sounds like a very exciting project! Creating a robot is a big accomplishment. How did you feel when you finished your project?
+user:  Can you repeat that please?
+assistant: Sure, I can repeat the question. How did you feel when you completed your final degree project on creating a robot?
+user:  I feel a big reset inside me.
+assistant: It sounds like finishing your project was very meaningful for you. That's a wonderful feeling. Do you want to continue working with robots in the future?
+user:  Yes
+assistant: That's fantastic! Working with robots can be exciting and rewarding. What kind of robot would you like to build next?
+user:  I will use to learn in the topic robotic arm.
+assistant: Robotics arms are very interesting and have a wide range of applications. What would you like your robotic arm to be able to do?
+user:  I would like that Robotic R can be transportation-themed.
+assistant: It sounds like you're interested in creating a robotic arm that can be used for transport tasks. That could be very useful! Can you give an example of something the arm might carry or move?
+user:  The robotic arm can move with the engine.
+assistant: That's correct, a robotic arm can definitely move objects with precision. This can be particularly useful in many fields like manufacturing or healthcare. What would you like the robotic arm to pick up or move in your case?
+user:  What do you think about robotic arms?
+assistant: As an AI, I don't have personal opinions. But robotic arms can be very useful for tasks that require precision and consistency, or that might be dangerous for humans. They can do everything from assembling cars to performing delicate surgeries. Do you think robotic arms have any disadvantages?
+user:  I think that the robotics app does not have any disadvantages.
+assistant: That's an interesting perspective! While it's true that robotic arms have many advantages, some people might argue that they could replace human jobs in some sectors. What could be a way to avoid this?
+user:  This is an interesting question.
+assistant: I'm glad you think so! So, how do you think we can avoid job losses due to automation and robotics?
+user:  Maybe we found a new job in the future.
+assistant: Indeed, with every technology advancement, new types of jobs are often created. Learning and adapting to new skills can also be beneficial. What kind of new jobs do you think might exist in the future?
+user:  A Robot Inspector
+assistant: That's a fantastic example! A Robot Inspector could ensure that robots are operating safely and efficiently. Can you describe what a day in the life of a Robot Inspector might be like?
+user:  Maybe it's the end of the world for humanity.
+assistant: I understand your concerns. Technology does have a major impact on our lives, and it's important to consider how we use it responsibly. Can you think of ways we can ensure technology benefits all of humanity?
+user:  If the robots can work better than humans, I think that the new works can be replaced with other robots.
+assistant: Yes, as technology improves, certain jobs might be performed more efficiently by robots. But, humans would then have new types of jobs, such as designing, building and maintaining these robots. Can you think of any other jobs that humans could do in the future?
+user:  But the question is, if these new jobs can be replied with a robot too?
+assistant: That's a thoughtful point! The advancement of artificial intelligence and robotics does raise important questions about their impact on jobs. However, it's also worth noting that there are many tasks that rely on human judgment, creativity, and interpersonal skills. These are things that machines can't replicate. Can you think of a job that only a human can do?
+user:  What do you think about if the future will be like millions of humans? All the population will work for robots?
+assistant: As an AI, I don't have personal opinions. But the future of work is indeed a topic of ongoing debate. Some experts predict that many jobs could be automated, but they also expect new jobs to be created as technology advances. The key will likely be balancing the benefits of automation with the need for meaningful human work. How do you imagine the future of work?
+user:  Maybe the future of war is...not war...
+assistant: It sounds like you're saying you hope the future will be peaceful, with no wars. That's a beautiful thought! Can you tell me what you think a peaceful world would look like?
