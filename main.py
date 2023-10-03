@@ -10,6 +10,7 @@ import time, keyboard, pyaudio
 # Constants
 output_filename = "recorded_audio.wav"
 DEBUG = False
+os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 
 # Get device
 device = 'cuda' if torch.cuda.is_available() else 'mps' if torch.backends.mps.is_available() else 'cpu'
@@ -32,15 +33,15 @@ tts = TTS(model_name).to(device)
 
 # OpenAI
 openai.api_key = os.environ["OPENAI_API_KEY"]
-os.environ["KMP_DUPLICATE_LIB_OK"]="TRUE"
 chat_history = []
+#Use beginner-level vocabulary. 
 initial_prompt = """You are an AI assistant of English learning.  
 Use beginner-level vocabulary. 
 You make only one question and wait for my answer. 
 Teach me english using new words and sentences. 
 No enumerate the questions. 
 You have the power of your creativity for new kinds for learn English. 
-Remember that I have 5 years old. """
+Remember that I have 8 years old. """
 initial_prompt = initial_prompt.replace("\n", "")
 STATE = "AI"
 PROMPT = ""
